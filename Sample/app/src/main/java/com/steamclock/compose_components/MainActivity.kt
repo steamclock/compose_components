@@ -33,24 +33,24 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 private fun Content() {
-    val navController = rememberNavController()
-    Scaffold(topBar = {
-        val navBackStackEntry by navController.currentBackStackEntryAsState()
-        val currentDestination = navBackStackEntry?.destination
-        val currentRoute = currentDestination?.route ?: ""
+    NiceComponentsTheme {
+        val navController = rememberNavController()
+        Scaffold(topBar = {
+            val navBackStackEntry by navController.currentBackStackEntryAsState()
+            val currentDestination = navBackStackEntry?.destination
+            val currentRoute = currentDestination?.route ?: ""
 
-        TopAppBar(
-            title = {
-                Text(text = currentRoute)
-            },
-            navigationIcon = {
-                if (currentRoute != Routes.Home) {
-                    BackButton { navController.popBackStack() }
+            TopAppBar(
+                title = {
+                    Text(text = currentRoute)
+                },
+                navigationIcon = {
+                    if (currentRoute != Routes.Home) {
+                        BackButton { navController.popBackStack() }
+                    }
                 }
-            }
-        )
-    }) {
-        NiceComponentsTheme {
+            )
+        }) {
             Surface {
                 NavHost(navController = navController, startDestination = Routes.Home) {
                     composable(Routes.Home) { Home(navController) }

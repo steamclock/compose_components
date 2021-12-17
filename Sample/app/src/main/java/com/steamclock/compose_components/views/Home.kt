@@ -24,13 +24,13 @@ fun Home(navController: NavController) {
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        BorderlessButton(text = "All Components") {
+        BorderlessButton(text = Routes.AllComponents) {
             navController.navigate(Routes.AllComponents)
         }
-        BorderlessButton(text = "Sign in") {
+        BorderlessButton(text = Routes.SignIn) {
             navController.navigate(Routes.SignIn)
         }
-        BorderlessButton(text = "StatefulView Example") {
+        BorderlessButton(text = Routes.StatefulView) {
             navController.navigate(Routes.StatefulView)
         }
     }
