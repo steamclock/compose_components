@@ -30,8 +30,18 @@ fun DetailText(
 @Preview
 @Composable
 fun DetailTextPreview() {
-    Surface {
-        NiceComponentsTheme {
+    NiceComponentsTheme {
+        Surface {
+            DetailText(text = "Detail Text")
+        }
+    }
+}
+
+@Preview
+@Composable
+fun DetailTextPreviewDark() {
+    NiceComponentsTheme(darkTheme = true) {
+        Surface {
             DetailText(text = "Detail Text")
         }
     }

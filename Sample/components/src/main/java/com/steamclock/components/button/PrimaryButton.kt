@@ -38,8 +38,8 @@ fun PrimaryButton(
 @Preview
 @Composable
 fun PrimaryButtonPreview() {
-    Surface {
-        NiceComponentsTheme(false) {
+    NiceComponentsTheme(false) {
+        Surface {
             PrimaryButton(text = "Preview") {
 
             }
@@ -50,8 +50,8 @@ fun PrimaryButtonPreview() {
 @Preview
 @Composable
 fun PrimaryButtonPreviewDark() {
-    Surface {
-        NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(darkTheme = true) {
+        Surface {
             PrimaryButton(text = "Preview") {
 
             }

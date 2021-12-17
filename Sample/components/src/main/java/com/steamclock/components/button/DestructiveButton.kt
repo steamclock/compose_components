@@ -38,8 +38,8 @@ fun DestructiveButton(
 @Preview
 @Composable
 fun DestructiveButtonPreview() {
-    Surface {
-        NiceComponentsTheme(false) {
+    NiceComponentsTheme(false) {
+        Surface {
             DestructiveButton(text = "Preview") {
 
             }
@@ -50,10 +50,9 @@ fun DestructiveButtonPreview() {
 @Preview
 @Composable
 fun DestructiveButtonPreviewDark() {
-    Surface {
-        NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(darkTheme = true) {
+        Surface {
             DestructiveButton(text = "Preview") {
-
             }
         }
     }

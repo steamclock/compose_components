@@ -30,8 +30,19 @@ fun SectionTitle(
 @Preview
 @Composable
 fun SectionTitlePreview() {
-    Surface {
-        NiceComponentsTheme {
+    NiceComponentsTheme {
+        Surface {
+            ScreenTitle("Section Title")
+        }
+    }
+}
+
+
+@Preview
+@Composable
+fun SectionTitlePreviewDark() {
+    NiceComponentsTheme(darkTheme = true) {
+        Surface {
             ScreenTitle("Section Title")
         }
     }

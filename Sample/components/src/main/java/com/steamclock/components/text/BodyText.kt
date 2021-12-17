@@ -30,8 +30,18 @@ fun BodyText(
 @Preview
 @Composable
 fun BodyTextPreview() {
-    Surface {
-        NiceComponentsTheme {
+    NiceComponentsTheme {
+        Surface {
+            BodyText(text = "Body Text")
+        }
+    }
+}
+
+@Preview
+@Composable
+fun BodyTextPreviewDark() {
+    NiceComponentsTheme(darkTheme = true) {
+        Surface {
             BodyText(text = "Body Text")
         }
     }

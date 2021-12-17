@@ -38,8 +38,8 @@ fun SecondaryButton(
 @Preview
 @Composable
 fun SecondaryButtonPreview() {
-    Surface {
-        NiceComponentsTheme(false) {
+    NiceComponentsTheme(false) {
+        Surface {
             SecondaryButton(text = "Preview") {
 
             }
@@ -50,8 +50,8 @@ fun SecondaryButtonPreview() {
 @Preview
 @Composable
 fun SecondaryButtonPreviewDark() {
-    Surface {
-        NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(darkTheme = true) {
+        Surface {
             SecondaryButton(text = "Preview") {
 
             }

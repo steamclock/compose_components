@@ -30,8 +30,18 @@ fun ItemTitle(
 @Preview
 @Composable
 fun ItemTitlePreview() {
-    Surface {
-        NiceComponentsTheme {
+    NiceComponentsTheme {
+        Surface {
+            ItemTitle("Item Title")
+        }
+    }
+}
+
+@Preview
+@Composable
+fun ItemTitlePreviewDark() {
+    NiceComponentsTheme(darkTheme = true) {
+        Surface {
             ItemTitle("Item Title")
         }
     }

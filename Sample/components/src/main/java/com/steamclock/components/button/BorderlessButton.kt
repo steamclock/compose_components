@@ -30,8 +30,8 @@ fun BorderlessButton(
 @Preview
 @Composable
 fun BorderlessButtonPreview() {
-    Surface {
-        NiceComponentsTheme(false) {
+    NiceComponentsTheme(false) {
+        Surface {
             BorderlessButton(text = "Preview") {
 
             }
@@ -42,8 +42,8 @@ fun BorderlessButtonPreview() {
 @Preview
 @Composable
 fun BorderlessButtonPreviewDark() {
-    Surface {
-        NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(darkTheme = true) {
+        Surface {
             BorderlessButton(text = "Preview") {
 
             }

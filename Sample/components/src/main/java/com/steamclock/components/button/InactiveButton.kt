@@ -39,8 +39,8 @@ fun InactiveButton(
 @Preview
 @Composable
 fun InactiveButtonPreview() {
-    Surface {
-        NiceComponentsTheme(false) {
+    NiceComponentsTheme(false) {
+        Surface {
             InactiveButton(text = "Preview") {
 
             }
@@ -51,8 +51,8 @@ fun InactiveButtonPreview() {
 @Preview
 @Composable
 fun InactiveButtonPreviewDark() {
-    Surface {
-        NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(darkTheme = true) {
+        Surface {
             InactiveButton(text = "Preview") {
 
             }
