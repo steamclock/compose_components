@@ -28,12 +28,13 @@ fun AllComponents() {
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .padding(16.dp)
             .verticalScroll(scrollState),
-        verticalArrangement = Arrangement.spacedBy(5.dp)
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(2.dp)
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             ScreenTitle("Screen Title")
             SectionTitle("Section Title")
@@ -44,7 +45,7 @@ fun AllComponents() {
 
         Column(
             modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(2.dp)
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             BodyText("Body Text")
             DetailText("Detail Text")
@@ -54,18 +55,18 @@ fun AllComponents() {
 
         Column(
             modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(2.dp)
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            PrimaryButton("Primary Button") { }
-            SecondaryButton("Secondary Button") { }
-            BorderlessButton("Borderless Button") { }
-            InactiveButton("Inactive Button") { }
-            DestructiveButton("Destructive Button") { }
+            PrimaryButton("Primary Button", modifier = Modifier.fillMaxWidth()) { }
+            SecondaryButton("Secondary Button", modifier = Modifier.fillMaxWidth()) { }
+            BorderlessButton("Borderless Button", modifier = Modifier.fillMaxWidth()) { }
+            InactiveButton("Inactive Button", modifier = Modifier.fillMaxWidth()) { }
+            DestructiveButton("Destructive Button", modifier = Modifier.fillMaxWidth()) { }
         }
 
         ThemedDivider()
 
-        Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+        Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
 
         }
 
@@ -73,9 +74,7 @@ fun AllComponents() {
 
         Row(modifier = Modifier.fillMaxSize()) {
             Spacer(Modifier.weight(1f))
-
             LoadingView()
-
             Spacer(Modifier.weight(1f))
         }
     }

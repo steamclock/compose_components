@@ -26,8 +26,8 @@ fun SignIn() {
     Column(
         Modifier
             .fillMaxSize()
-            .padding(8.dp),
-        verticalArrangement = Arrangement.spacedBy(5.dp)
+            .padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         ScreenTitle("Sign In")
 
@@ -43,9 +43,9 @@ fun SignIn() {
             modifier = Modifier.fillMaxWidth()
         )
 
-        PrimaryButton("Sign In") { }
+        PrimaryButton("Sign In", modifier = Modifier.fillMaxWidth()) { }
 
-        SecondaryButton("Create an Account") {}
+        SecondaryButton("Create an Account", modifier = Modifier.fillMaxWidth()) {}
         Spacer(modifier = Modifier.weight(1f))
     }
 }
