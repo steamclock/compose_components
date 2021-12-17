@@ -45,15 +45,7 @@ private fun Content() {
             },
             navigationIcon = {
                 if (currentRoute != Routes.Home) {
-                    Image(imageVector = Icons.Filled.ArrowBack,
-                        colorFilter = ColorFilter.tint(MaterialTheme.colors.onPrimary),
-                        contentDescription = "Back",
-                        modifier = Modifier
-                            .padding(16.dp)
-                            .clickable {
-                                navController.popBackStack()
-                            }
-                    )
+                    BackButton { navController.popBackStack() }
                 }
             }
         )
@@ -69,4 +61,15 @@ private fun Content() {
             }
         }
     }
+}
+
+@Composable
+private fun BackButton(onClick: () -> Unit) {
+    Image(imageVector = Icons.Filled.ArrowBack,
+        colorFilter = ColorFilter.tint(MaterialTheme.colors.onPrimary),
+        contentDescription = "Back",
+        modifier = Modifier
+            .padding(16.dp)
+            .clickable(onClick = onClick)
+    )
 }
