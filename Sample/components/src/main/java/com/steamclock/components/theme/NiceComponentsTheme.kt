@@ -11,25 +11,33 @@ import com.steamclock.components.extensions.fromHex
  * Created by jake on 2021-12-17, 10:48 a.m.
  */
 val NiceComponentsLightColors = lightColors(
-    primary = Color.fromHex("#555ADF"),
-    secondary = Color.fromHex("#399673"),
-    onSecondary = Color.White,
-    error = Color.fromHex("#CF4433"),
-    onSurface = Color.Black,
-    surface = Color.White,
-    background = Color.fromHex("#E7E9EC")
+    primary = Color.fromHex("#4F46E5"),
+    onPrimary = Color.fromHex("#F9FAFB"),
+    primaryVariant = Color.fromHex("#4338CA"),
+    secondary = Color.fromHex("#059669"),
+    onSecondary = Color.fromHex("#F9FAFB"),
+    secondaryVariant = Color.fromHex("#047857"),
+    error = Color.fromHex("#DC2626"),
+    onError = Color.fromHex("#F9FAFB"),
+    onSurface = Color.fromHex("#111827"),
+    surface = Color.fromHex("#F3F4F6"),
+    background = Color.fromHex("#E5E7EB"),
+    onBackground = Color.fromHex("#111827")
 )
 
 val NiceComponentsDarkColors = darkColors(
-    primary = Color.fromHex("#555ADF"),
-    onPrimary = Color.White,
-    secondary = Color.fromHex("#399673"),
-    onSecondary = Color.White,
-    error = Color.fromHex("#CF4433"),
-    onError = Color.White,
-    onSurface = Color.White,
-    surface = Color.Black,
-    background = Color.fromHex("#3D4147")
+    primary = Color.fromHex("#4F46E5"),
+    onPrimary = Color.fromHex("#F9FAFB"),
+    primaryVariant = Color.fromHex("#4338CA"),
+    secondary = Color.fromHex("#059669"),
+    onSecondary = Color.fromHex("#F9FAFB"),
+    secondaryVariant = Color.fromHex("#047857"),
+    error = Color.fromHex("#DC2626"),
+    onError = Color.fromHex("#F9FAFB"),
+    onSurface = Color.fromHex("#F9FAFB"),
+    surface = Color.fromHex("#1F2937"),
+    background = Color.fromHex("#111827"),
+    onBackground = Color.fromHex("#E5E7EB")
 )
 
 @Composable
