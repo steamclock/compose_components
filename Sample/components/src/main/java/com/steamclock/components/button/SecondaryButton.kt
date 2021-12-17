@@ -1,5 +1,6 @@
 package com.steamclock.components.button
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -16,6 +17,7 @@ import com.steamclock.components.theme.NiceComponentsTheme
 fun SecondaryButton(
     text: String,
     modifier: Modifier = Modifier,
+    borderStroke: BorderStroke? = null,
     onClick: () -> Unit
 ) {
     Button(
@@ -24,8 +26,8 @@ fun SecondaryButton(
         colors = ButtonDefaults.buttonColors(
             backgroundColor = MaterialTheme.colors.secondary
         ),
-        shape = MaterialTheme.shapes.small
-//        border = BorderStroke(style.border.width, style.border.color)
+        shape = MaterialTheme.shapes.small,
+        border = borderStroke
     ) {
         Text(text,
             color = MaterialTheme.colors.onSecondary,
