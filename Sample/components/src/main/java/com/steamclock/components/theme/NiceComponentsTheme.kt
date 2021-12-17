@@ -37,7 +37,7 @@ fun NiceComponentsTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     lightColors: Colors = NiceComponentsLightColors,
     darkColors: Colors = NiceComponentsDarkColors,
-    typography: Typography = NiceComponentsTypography,
+    typography: Typography = niceComponentsTypography(),
     shapes: Shapes = MaterialTheme.shapes,
     content: @Composable () -> Unit
 ) {
