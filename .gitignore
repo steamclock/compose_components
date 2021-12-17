@@ -84,6 +84,7 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 
-*/.idea/*.*
-.idea/*.*
+*/.idea/*
+.idea/*
 *.DS_Store
+Sample/.idea/*
