@@ -15,11 +15,12 @@ import com.steamclock.components.theme.NiceComponentsTheme
 @Composable
 fun ResizableImage(
     url: String,
+    contentDescription: String,
     modifier: Modifier = Modifier
 ) {
     Image(
         painter = rememberImagePainter(url),
-        contentDescription = null,
+        contentDescription = contentDescription,
         modifier = modifier
     )
 }
@@ -30,7 +31,7 @@ fun ResizableImagePreview() {
     NiceComponentsTheme {
         Surface {
             // note: displaying images from a URL doesn't work in preview
-            ResizableImage("https://www.example.com/image.jpg")
+            ResizableImage("https://www.example.com/image.jpg", contentDescription = "None")
         }
     }
 }
@@ -41,7 +42,7 @@ fun ResizableImagePreviewDark() {
     NiceComponentsTheme(darkTheme = true) {
         Surface {
             // note: displaying images from a URL doesn't work in preview
-            ResizableImage("https://www.example.com/image.jpg")
+            ResizableImage("https://www.example.com/image.jpg", contentDescription = "None")
         }
     }
 }
