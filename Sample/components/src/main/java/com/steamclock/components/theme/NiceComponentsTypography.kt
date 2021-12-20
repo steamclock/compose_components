@@ -10,7 +10,7 @@ import com.steamclock.components.extensions.applying
  * Sample
  * Created by jake on 2021-12-17, 10:44 a.m.
  */
-fun niceComponentsTypography(
+internal fun niceComponentsTypography(
     typeTheme: TypeTheme? = null,
 ) =
     Typography(
