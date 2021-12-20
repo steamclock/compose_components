@@ -9,7 +9,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.steamclock.components.extensions.applying
 import com.steamclock.components.extensions.borderStroke
-import com.steamclock.components.extensions.optionalHeight
+import com.steamclock.components.extensions.optionalMinHeight
 import com.steamclock.components.theme.ButtonStyle
 import com.steamclock.components.theme.NiceComponentsTheme
 
@@ -25,7 +25,7 @@ fun BorderlessButton(
     onClick: () -> Unit
 ) {
     TextButton(
-        modifier = modifier.optionalHeight(buttonStyle?.height),
+        modifier = modifier.optionalMinHeight(buttonStyle?.height),
         onClick = onClick,
         colors = ButtonDefaults.buttonColors(
             backgroundColor = buttonStyle?.surfaceColor ?: Color.Transparent

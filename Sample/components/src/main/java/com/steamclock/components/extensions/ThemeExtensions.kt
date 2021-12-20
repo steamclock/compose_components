@@ -16,9 +16,9 @@ fun TextStyle.applying(textStyle: TypeStyle.TextStyle?): TextStyle {
     )
 }
 
-fun Modifier.optionalHeight(height: Dp?): Modifier {
+fun Modifier.optionalMinHeight(height: Dp?): Modifier {
     return if (height != null) {
-        this.height(height)
+        this.defaultMinSize(minHeight = height)
     } else {
         this
     }
