@@ -25,7 +25,7 @@ fun DetailText(
         modifier = modifier,
         maxLines = typeStyle?.lineLimit ?: Int.MAX_VALUE,
         color = typeStyle?.color ?: MaterialTheme.colors.onSurface,
-        style = MaterialTheme.typography.caption.applying(typeStyle)
+        style = MaterialTheme.typography.caption.applying(typeStyle?.theme)
     )
 }
 

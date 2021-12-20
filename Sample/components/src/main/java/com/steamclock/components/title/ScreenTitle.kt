@@ -25,7 +25,7 @@ fun ScreenTitle(
         modifier = modifier,
         maxLines = typeStyle?.lineLimit ?: Int.MAX_VALUE,
         color = typeStyle?.color ?: MaterialTheme.colors.onSurface,
-        style = MaterialTheme.typography.h1.applying(typeStyle)
+        style = MaterialTheme.typography.h1.applying(typeStyle?.theme)
     )
 }
 
