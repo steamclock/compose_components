@@ -6,7 +6,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.steamclock.components.extensions.applying
 import com.steamclock.components.theme.NiceComponentsTheme
+import com.steamclock.components.theme.TypeStyle
 
 /**
  * Sample
@@ -16,14 +18,14 @@ import com.steamclock.components.theme.NiceComponentsTheme
 fun BodyText(
     text: String,
     modifier: Modifier = Modifier,
-    maxLines: Int = Int.MAX_VALUE
+    typeStyle: TypeStyle? = null
 ) {
     Text(
         text = text,
         modifier = modifier,
-        maxLines = maxLines,
-        color = MaterialTheme.colors.onSurface,
-        style = MaterialTheme.typography.body1
+        maxLines = typeStyle?.lineLimit ?: Int.MAX_VALUE,
+        color = typeStyle?.color ?: MaterialTheme.colors.onSurface,
+        style = MaterialTheme.typography.body1.applying(typeStyle)
     )
 }
 
