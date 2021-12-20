@@ -1,7 +1,9 @@
 package com.steamclock.components.theme
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 
 /**
  * Sample
@@ -9,6 +11,9 @@ import androidx.compose.ui.unit.Dp
  */
 data class BorderStyle(
     val color: Color,
-    val radius: Dp,
-    val width: Dp
-)
+    val width: Dp = 0.dp
+) {
+    fun borderStroke(): BorderStroke {
+        return BorderStroke(color = color, width = width)
+    }
+}

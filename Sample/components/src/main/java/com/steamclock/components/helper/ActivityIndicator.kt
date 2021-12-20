@@ -1,11 +1,11 @@
 package com.steamclock.components.helper
 
 import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.steamclock.components.theme.CurrentConfig
 import com.steamclock.components.theme.NiceComponentsTheme
 
 /**
@@ -18,7 +18,7 @@ fun ActivityIndicator(
 ) {
     CircularProgressIndicator(
         modifier = modifier,
-        color = MaterialTheme.colors.primary
+        color = CurrentConfig.colorTheme.primary
     )
 }
 

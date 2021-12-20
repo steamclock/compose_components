@@ -1,12 +1,11 @@
 package com.steamclock.components.text
 
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.steamclock.components.extensions.applying
+import com.steamclock.components.theme.CurrentConfig
 import com.steamclock.components.theme.NiceComponentsTheme
 import com.steamclock.components.theme.TypeStyle
 
@@ -18,14 +17,14 @@ import com.steamclock.components.theme.TypeStyle
 fun DetailText(
     text: String,
     modifier: Modifier = Modifier,
-    typeStyle: TypeStyle? = null
+    typeStyle: TypeStyle = CurrentConfig.detailTextStyle
 ) {
     Text(
         text = text,
         modifier = modifier,
-        maxLines = typeStyle?.lineLimit ?: Int.MAX_VALUE,
-        color = typeStyle?.color ?: MaterialTheme.colors.onSurface,
-        style = MaterialTheme.typography.caption.applying(typeStyle?.theme)
+        maxLines = typeStyle.lineLimit ?: Int.MAX_VALUE,
+        color = typeStyle.color,
+        style = typeStyle.toTextStyle()
     )
 }
 

@@ -1,13 +1,13 @@
 package com.steamclock.components.components
 
 import androidx.compose.material.Divider
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.steamclock.components.theme.CurrentConfig
 import com.steamclock.components.theme.NiceComponentsTheme
 
 /**
@@ -20,7 +20,7 @@ fun ThemedDivider(
 ) {
     Divider(
         modifier = modifier.alpha(0.6f),
-        color = MaterialTheme.colors.onPrimary,
+        color = CurrentConfig.colorTheme.onPrimary,
         thickness = 1.dp
     )
 }

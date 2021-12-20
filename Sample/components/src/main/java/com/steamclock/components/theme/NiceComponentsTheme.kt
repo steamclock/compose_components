@@ -1,56 +1,99 @@
 package com.steamclock.components.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.*
+import androidx.compose.material.Colors
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Typography
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.staticCompositionLocalOf
 
 /**
  * Sample
  * Created by jake on 2021-12-17, 10:48 a.m.
  */
-val NiceComponentsLightColors = lightColors(
-    primary =  Color(0xFF4F46E5),
-    onPrimary = Color(0xFFF9FAFB),
-    primaryVariant = Color(0xFF4338CA),
-    secondary = Color(0xFF059669),
-    onSecondary = Color(0xFFF9FAFB),
-    secondaryVariant = Color(0xFF047857),
-    error = Color(0xFFDC2626),
-    onError = Color(0xFFF9FAFB),
-    onSurface = Color(0xFF111827),
-    surface = Color(0xFFF3F4F6),
-    background = Color(0xFFE5E7EB),
-    onBackground = Color(0xFF111827)
-)
 
-val NiceComponentsDarkColors = darkColors(
-    primary =  Color(0xFF4F46E5),
-    onPrimary = Color(0xFFF9FAFB),
-    primaryVariant = Color(0xFF4338CA),
-    secondary = Color(0xFF059669),
-    onSecondary = Color(0xFFF9FAFB),
-    secondaryVariant = Color(0xFF047857),
-    error = Color(0xFFDC2626),
-    onError = Color(0xFFF9FAFB),
-    onSurface = Color(0xFFF9FAFB),
-    surface = Color(0xFF1F2937),
-    background = Color(0xFF111827),
-    onBackground = Color(0xFFE5E7EB)
-)
+internal val LocalConfig = staticCompositionLocalOf {
+    Config()
+}
 
 @Composable
 fun NiceComponentsTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    lightColors: Colors = NiceComponentsLightColors,
-    darkColors: Colors = NiceComponentsDarkColors,
-    typeTheme: TypeTheme? = null,
-    shapes: Shapes = MaterialTheme.shapes,
+    config: Config = Config(isDarkTheme = darkTheme),
     content: @Composable () -> Unit
 ) {
-    MaterialTheme(
-        colors = if (darkTheme) darkColors else lightColors,
-        typography = niceComponentsTypography(typeTheme),
-        shapes = shapes,
-        content = content)
+    CompositionLocalProvider(LocalConfig provides config) {
+        MaterialTheme(
+            colors = config.colorTheme,
+            typography = Typography(
+                h1 = config.typeTheme.headline1.toTextStyle(),
+                h2 = config.typeTheme.headline2.toTextStyle(),
+                h3 = config.typeTheme.headline3.toTextStyle(),
+                h4 = config.typeTheme.headline4.toTextStyle(),
+                subtitle1 = config.typeTheme.subtitle1.toTextStyle(),
+                subtitle2 = config.typeTheme.subtitle2.toTextStyle(),
+                body1 = config.typeTheme.body1.toTextStyle(),
+                body2 = config.typeTheme.body2.toTextStyle(),
+                button = config.typeTheme.button.toTextStyle(),
+                caption = config.typeTheme.caption.toTextStyle(),
+                overline = config.typeTheme.overline.toTextStyle()
+            ),
+            content = content
+        )
+    }
+}
+
+object CurrentConfig {
+    private val config: Config
+        @Composable
+        get() = LocalConfig.current
+
+    val colorTheme: Colors
+        @Composable
+        get() = config.colorTheme
+
+    val typeTheme: TypeTheme
+        @Composable
+        get() = config.typeTheme
+
+    val borderlessButtonStyle: ButtonStyle
+        @Composable
+        get() = config.borderlessButtonStyle
+
+    val destructiveButtonStyle: ButtonStyle
+        @Composable
+        get() = config.destructiveButtonStyle
+
+    val inactiveButtonStyle: ButtonStyle
+        @Composable
+        get() = config.inactiveButtonStyle
+
+    val primaryButtonStyle: ButtonStyle
+        @Composable
+        get() = config.primaryButtonStyle
+
+    val secondaryButtonStyle: ButtonStyle
+        @Composable
+        get() = config.secondaryButtonStyle
+
+    val bodyTextStyle: TypeStyle
+        @Composable
+        get() = config.bodyTextStyle
+
+    val detailTextStyle: TypeStyle
+        @Composable
+        get() = config.detailTextStyle
+
+    val itemTitleStyle: TypeStyle
+        @Composable
+        get() = config.itemTitleStyle
+
+    val screenTitleStyle: TypeStyle
+        @Composable
+        get() = config.screenTitleStyle
+
+    val sectionTitleStyle: TypeStyle
+        @Composable
+        get() = config.sectionTitleStyle
 }

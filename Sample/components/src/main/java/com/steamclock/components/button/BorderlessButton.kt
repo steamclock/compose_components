@@ -1,14 +1,13 @@
 package com.steamclock.components.button
 
+import androidx.compose.foundation.layout.defaultMinSize
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.steamclock.components.extensions.applying
-import com.steamclock.components.extensions.borderStroke
-import com.steamclock.components.extensions.optionalMinHeight
 import com.steamclock.components.theme.ButtonStyle
+import com.steamclock.components.theme.CurrentConfig
 import com.steamclock.components.theme.NiceComponentsTheme
 
 /**
@@ -19,21 +18,21 @@ import com.steamclock.components.theme.NiceComponentsTheme
 fun BorderlessButton(
     text: String,
     modifier: Modifier = Modifier,
-    buttonStyle: ButtonStyle? = null,
+    buttonStyle: ButtonStyle = CurrentConfig.borderlessButtonStyle,
     onClick: () -> Unit
 ) {
     TextButton(
-        modifier = modifier.optionalMinHeight(buttonStyle?.height),
+        modifier = modifier.defaultMinSize(minHeight = buttonStyle.height),
         onClick = onClick,
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = buttonStyle?.surfaceColor ?: Color.Transparent
+            backgroundColor = buttonStyle.surfaceColor
         ),
-        shape = MaterialTheme.shapes.small.applying(buttonStyle?.border),
-        border = buttonStyle?.border?.borderStroke()
+        shape = RoundedCornerShape(buttonStyle.radius),
+        border = buttonStyle.border?.borderStroke()
     ) {
         Text(text,
-            color = buttonStyle?.onSurfaceColor ?: MaterialTheme.colors.primary,
-            style = LocalTextStyle.current.applying(buttonStyle?.textStyle)
+            color = buttonStyle.onSurfaceColor,
+            style = buttonStyle.textStyle.toTextStyle()
         )
     }
 }
