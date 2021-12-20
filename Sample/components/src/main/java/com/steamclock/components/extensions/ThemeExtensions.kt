@@ -2,16 +2,15 @@ package com.steamclock.components.extensions
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.defaultMinSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.CornerBasedShape
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import com.steamclock.components.theme.BorderStyle
-import com.steamclock.components.theme.TypeStyle
+import com.steamclock.components.theme.TypeTheme
 
-fun TextStyle.applying(textStyle: TypeStyle.TextStyle?): TextStyle {
+fun TextStyle.applying(textStyle: TypeTheme.TextStyle?): TextStyle {
     return this.copy(
         fontSize = textStyle?.size ?: this.fontSize,
         fontFamily = textStyle?.fontFamily ?: this.fontFamily,

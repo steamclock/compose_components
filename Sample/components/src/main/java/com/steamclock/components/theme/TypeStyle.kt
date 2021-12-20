@@ -9,6 +9,4 @@ import androidx.compose.ui.unit.TextUnit
  * Sample
  * Created by jake on 2021-12-20, 10:14 a.m.
  */
-data class TypeStyle(val color: Color, val theme: TextStyle, val lineLimit: Int? = null) {
-    data class TextStyle(val size: TextUnit, val fontFamily: FontFamily? = null, val fontWeight: FontWeight? = null)
-}
+data class TypeStyle(val color: Color, val theme: TypeTheme.TextStyle, val lineLimit: Int? = null)

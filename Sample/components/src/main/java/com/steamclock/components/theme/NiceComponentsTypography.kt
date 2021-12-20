@@ -2,64 +2,55 @@ package com.steamclock.components.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.steamclock.components.extensions.applying
 
 /**
  * Sample
  * Created by jake on 2021-12-17, 10:44 a.m.
  */
-fun niceComponentsTypography(fontFamily: FontFamily? = null) =
+fun niceComponentsTypography(
+    typeTheme: TypeTheme? = null,
+) =
     Typography(
         h1 = TextStyle(
-            fontFamily = fontFamily,
             fontWeight = FontWeight.SemiBold,
             fontSize = 48.sp
-        ),
+        ).applying(typeTheme?.headline1),
         h2 = TextStyle(
-            fontFamily = fontFamily,
             fontWeight = FontWeight.SemiBold,
             fontSize = 34.sp
-        ),
+        ).applying(typeTheme?.headline2),
         h3 = TextStyle(
-            fontFamily = fontFamily,
             fontWeight = FontWeight.SemiBold,
             fontSize = 24.sp
-        ),
+        ).applying(typeTheme?.headline3),
         h4 = TextStyle(
-            fontFamily = fontFamily,
             fontWeight = FontWeight.SemiBold,
             fontSize = 20.sp
-        ),
+        ).applying(typeTheme?.headline4),
         subtitle1 = TextStyle(
-            fontFamily = fontFamily,
             fontWeight = FontWeight.SemiBold,
             fontSize = 16.sp
-        ),
+        ).applying(typeTheme?.subtitle1),
         subtitle2 = TextStyle(
-            fontFamily = fontFamily,
             fontWeight = FontWeight.SemiBold,
             fontSize = 14.sp
-        ),
+        ).applying(typeTheme?.subtitle2),
         body1 = TextStyle(
-            fontFamily = fontFamily,
             fontSize = 16.sp
-        ),
+        ).applying(typeTheme?.body1),
         body2 = TextStyle(
-            fontFamily = fontFamily,
             fontSize = 14.sp
-        ),
+        ).applying(typeTheme?.body2),
         button = TextStyle(
-            fontFamily = fontFamily,
             fontSize = 14.sp
-        ),
+        ).applying(typeTheme?.button),
         caption = TextStyle(
-            fontFamily = fontFamily,
             fontSize = 12.sp
-        ),
+        ).applying(typeTheme?.caption),
         overline = TextStyle(
-            fontFamily = fontFamily,
             fontSize = 12.sp
-        )
+        ).applying(typeTheme?.overline)
 )
