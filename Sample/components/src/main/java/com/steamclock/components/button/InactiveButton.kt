@@ -28,7 +28,7 @@ fun InactiveButton(
         colors = ButtonDefaults.buttonColors(
             backgroundColor = buttonStyle?.surfaceColor ?: MaterialTheme.colors.background
         ),
-        shape = MaterialTheme.shapes.small,
+        shape = MaterialTheme.shapes.small.applying(buttonStyle?.border),
         border = buttonStyle?.border?.borderStroke()
     ) {
         Text(text,

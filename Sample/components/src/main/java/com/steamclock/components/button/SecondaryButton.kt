@@ -27,7 +27,7 @@ fun SecondaryButton(
         colors = ButtonDefaults.buttonColors(
             backgroundColor =  buttonStyle?.surfaceColor ?: MaterialTheme.colors.secondary
         ),
-        shape = MaterialTheme.shapes.small,
+        shape = MaterialTheme.shapes.small.applying(buttonStyle?.border),
         border = buttonStyle?.border?.borderStroke()
     ) {
         Text(text,

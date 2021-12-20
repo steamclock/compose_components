@@ -1,9 +1,11 @@
 package com.steamclock.components.button
 
+import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.steamclock.components.extensions.applying
 import com.steamclock.components.extensions.borderStroke
 import com.steamclock.components.extensions.optionalMinHeight
@@ -27,7 +29,7 @@ fun PrimaryButton(
         colors = ButtonDefaults.buttonColors(
             backgroundColor = buttonStyle?.surfaceColor ?: MaterialTheme.colors.primary
         ),
-        shape = MaterialTheme.shapes.small,
+        shape = MaterialTheme.shapes.small.applying(buttonStyle?.border),
         border = buttonStyle?.border?.borderStroke()
     ) {
         Text(text,

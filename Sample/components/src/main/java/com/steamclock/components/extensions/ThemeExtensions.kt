@@ -1,7 +1,10 @@
 package com.steamclock.components.extensions
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.shape.CornerBasedShape
+import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
@@ -26,4 +29,12 @@ fun Modifier.optionalMinHeight(height: Dp?): Modifier {
 
 fun BorderStyle.borderStroke(): BorderStroke {
     return BorderStroke(color = color, width = width)
+}
+
+fun CornerBasedShape.applying(borderStyle: BorderStyle?): CornerBasedShape {
+    return if (borderStyle != null) {
+        this.copy(CornerSize(borderStyle.radius))
+    } else {
+        this
+    }
 }
