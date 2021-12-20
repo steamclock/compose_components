@@ -53,7 +53,7 @@ private fun Content() {
         }) {
             Surface {
                 NavHost(navController = navController, startDestination = Routes.Home) {
-                    composable(Routes.Home) { Home(navController) }
+                    composable(Routes.Home) { Home(navigate = { navController.navigate(it) }) }
                     composable(Routes.AllComponents) { AllComponents() }
                     composable(Routes.SignIn) { SignIn() }
                     composable(Routes.StatefulView) { StatefulExample() }

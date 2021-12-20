@@ -8,8 +8,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.steamclock.components.button.BorderlessButton
 import com.steamclock.components.theme.NiceComponentsTheme
 import com.steamclock.compose_components.Routes
@@ -19,19 +17,19 @@ import com.steamclock.compose_components.Routes
  * Created by jake on 2021-12-17, 2:12 p.m.
  */
 @Composable
-fun Home(navController: NavController) {
+fun Home(navigate: (String) -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         BorderlessButton(text = Routes.AllComponents) {
-            navController.navigate(Routes.AllComponents)
+            navigate(Routes.AllComponents)
         }
         BorderlessButton(text = Routes.SignIn) {
-            navController.navigate(Routes.SignIn)
+            navigate(Routes.SignIn)
         }
         BorderlessButton(text = Routes.StatefulView) {
-            navController.navigate(Routes.StatefulView)
+            navigate(Routes.StatefulView)
         }
     }
 }
@@ -42,8 +40,9 @@ fun Home(navController: NavController) {
 fun HomePreview() {
     NiceComponentsTheme {
         Surface {
-            val navController = rememberNavController()
-            Home(navController = navController)
+            Home {
+
+            }
         }
     }
 }
