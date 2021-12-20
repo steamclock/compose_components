@@ -33,7 +33,7 @@ fun BorderlessButton(
         border = buttonStyle?.border?.borderStroke()
     ) {
         Text(text,
-            color = buttonStyle?.onSurfaceColor ?: MaterialTheme.colors.onSurface,
+            color = buttonStyle?.onSurfaceColor ?: MaterialTheme.colors.primary,
             style = LocalTextStyle.current.applying(buttonStyle?.textStyle)
         )
     }
