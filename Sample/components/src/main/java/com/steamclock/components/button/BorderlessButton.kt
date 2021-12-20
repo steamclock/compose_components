@@ -4,9 +4,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.steamclock.components.extensions.applying
+import com.steamclock.components.extensions.borderStroke
 import com.steamclock.components.extensions.optionalHeight
 import com.steamclock.components.theme.ButtonStyle
 import com.steamclock.components.theme.NiceComponentsTheme
@@ -26,11 +28,12 @@ fun BorderlessButton(
         modifier = modifier.optionalHeight(buttonStyle?.height),
         onClick = onClick,
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = buttonStyle?.surfaceColor ?: MaterialTheme.colors.primary
-        )
+            backgroundColor = buttonStyle?.surfaceColor ?: Color.Transparent
+        ),
+        border = buttonStyle?.border?.borderStroke()
     ) {
         Text(text,
-            color = buttonStyle?.onSurfaceColor ?: MaterialTheme.colors.onPrimary,
+            color = buttonStyle?.onSurfaceColor ?: MaterialTheme.colors.onSurface,
             style = LocalTextStyle.current.applying(buttonStyle?.textStyle)
         )
     }

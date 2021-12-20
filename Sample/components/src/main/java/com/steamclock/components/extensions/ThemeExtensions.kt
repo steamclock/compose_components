@@ -1,9 +1,11 @@
 package com.steamclock.components.extensions
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.height
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
+import com.steamclock.components.theme.BorderStyle
 import com.steamclock.components.theme.TypeStyle
 
 fun TextStyle.applying(textStyle: TypeStyle.TextStyle?): TextStyle {
@@ -20,4 +22,8 @@ fun Modifier.optionalHeight(height: Dp?): Modifier {
     } else {
         this
     }
+}
+
+fun BorderStyle.borderStroke(): BorderStroke {
+    return BorderStroke(color = color, width = width)
 }

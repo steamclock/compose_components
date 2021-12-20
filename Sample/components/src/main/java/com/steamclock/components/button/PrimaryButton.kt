@@ -1,11 +1,11 @@
 package com.steamclock.components.button
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.steamclock.components.extensions.applying
+import com.steamclock.components.extensions.borderStroke
 import com.steamclock.components.extensions.optionalHeight
 import com.steamclock.components.theme.ButtonStyle
 import com.steamclock.components.theme.NiceComponentsTheme
@@ -18,7 +18,6 @@ import com.steamclock.components.theme.NiceComponentsTheme
 fun PrimaryButton(
     text: String,
     modifier: Modifier = Modifier,
-    borderStroke: BorderStroke? = null,
     buttonStyle: ButtonStyle? = null,
     onClick: () -> Unit
 ) {
@@ -29,7 +28,7 @@ fun PrimaryButton(
             backgroundColor = buttonStyle?.surfaceColor ?: MaterialTheme.colors.primary
         ),
         shape = MaterialTheme.shapes.small,
-        border = borderStroke
+        border = buttonStyle?.border?.borderStroke()
     ) {
         Text(text,
             color = buttonStyle?.onSurfaceColor ?: MaterialTheme.colors.onPrimary,

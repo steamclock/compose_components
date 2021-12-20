@@ -13,5 +13,5 @@ data class ButtonStyle(
     val height: Dp = 44.dp,
     val surfaceColor: Color? = null,
     val onSurfaceColor: Color? = null,
-//    val border: BorderStyle? = null
+    val border: BorderStyle? = null
 )
