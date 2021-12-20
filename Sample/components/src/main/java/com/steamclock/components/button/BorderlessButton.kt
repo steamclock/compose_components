@@ -1,12 +1,14 @@
 package com.steamclock.components.button
 
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.material.TextButton
+import androidx.compose.foundation.layout.height
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.steamclock.components.extensions.applying
+import com.steamclock.components.extensions.optionalHeight
+import com.steamclock.components.theme.ButtonStyle
 import com.steamclock.components.theme.NiceComponentsTheme
 
 /**
@@ -17,14 +19,19 @@ import com.steamclock.components.theme.NiceComponentsTheme
 fun BorderlessButton(
     text: String,
     modifier: Modifier = Modifier,
+    buttonStyle: ButtonStyle? = null,
     onClick: () -> Unit
 ) {
     TextButton(
-        modifier = modifier,
-        onClick = onClick
+        modifier = modifier.optionalHeight(buttonStyle?.height),
+        onClick = onClick,
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = buttonStyle?.surfaceColor ?: MaterialTheme.colors.primary
+        )
     ) {
         Text(text,
-            color = MaterialTheme.colors.primary,
+            color = buttonStyle?.onSurfaceColor ?: MaterialTheme.colors.onPrimary,
+            style = LocalTextStyle.current.applying(buttonStyle?.textStyle)
         )
     }
 }
