@@ -7,7 +7,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.steamclock.components.theme.Config
 import com.steamclock.components.theme.CurrentConfig
+import com.steamclock.components.theme.NiceComponentsDarkColors
 import com.steamclock.components.theme.NiceComponentsTheme
 
 /**
@@ -38,7 +40,7 @@ fun ScreenTitlePreview() {
 @Preview
 @Composable
 fun ScreenTitlePreviewDark() {
-    NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(Config(colorTheme = NiceComponentsDarkColors)) {
         Surface {
             ThemedDivider()
         }

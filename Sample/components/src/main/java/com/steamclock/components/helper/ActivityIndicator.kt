@@ -5,7 +5,9 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.steamclock.components.theme.Config
 import com.steamclock.components.theme.CurrentConfig
+import com.steamclock.components.theme.NiceComponentsDarkColors
 import com.steamclock.components.theme.NiceComponentsTheme
 
 /**
@@ -35,7 +37,7 @@ fun ActivityIndicatorPreview() {
 @Preview
 @Composable
 fun ActivityIndicatorPreviewDark() {
-    NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(Config(colorTheme = NiceComponentsDarkColors)) {
         Surface {
             ActivityIndicator()
         }

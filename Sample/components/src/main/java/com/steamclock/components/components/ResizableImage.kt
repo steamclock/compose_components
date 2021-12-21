@@ -6,6 +6,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import coil.compose.rememberImagePainter
+import com.steamclock.components.theme.Config
+import com.steamclock.components.theme.NiceComponentsDarkColors
 import com.steamclock.components.theme.NiceComponentsTheme
 
 /**
@@ -39,7 +41,7 @@ fun ResizableImagePreview() {
 @Preview
 @Composable
 fun ResizableImagePreviewDark() {
-    NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(Config(colorTheme = NiceComponentsDarkColors)) {
         Surface {
             // note: displaying images from a URL doesn't work in preview
             ResizableImage("https://www.example.com/image.jpg", contentDescription = "None")

@@ -1,5 +1,6 @@
 package com.steamclock.compose_components.views
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -83,7 +84,7 @@ fun AllComponents() {
 @Preview(showBackground = true)
 @Composable
 fun AllComponentsPreview() {
-    NiceComponentsTheme {
+    NiceComponentsTheme() {
         Surface {
             AllComponents()
         }

@@ -6,9 +6,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.steamclock.components.theme.ButtonStyle
-import com.steamclock.components.theme.CurrentConfig
-import com.steamclock.components.theme.NiceComponentsTheme
+import com.steamclock.components.theme.*
 
 /**
  * Sample
@@ -40,7 +38,7 @@ fun BorderlessButton(
 @Preview
 @Composable
 fun BorderlessButtonPreview() {
-    NiceComponentsTheme(false) {
+    NiceComponentsTheme {
         Surface {
             BorderlessButton(text = "Preview") {
 
@@ -52,7 +50,7 @@ fun BorderlessButtonPreview() {
 @Preview
 @Composable
 fun BorderlessButtonPreviewDark() {
-    NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(Config(colorTheme = NiceComponentsDarkColors)) {
         Surface {
             BorderlessButton(text = "Preview") {
 

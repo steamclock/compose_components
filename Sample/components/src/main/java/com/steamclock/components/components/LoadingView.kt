@@ -8,6 +8,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.steamclock.components.helper.ActivityIndicator
 import com.steamclock.components.text.BodyText
+import com.steamclock.components.theme.Config
+import com.steamclock.components.theme.NiceComponentsDarkColors
 import com.steamclock.components.theme.NiceComponentsTheme
 
 /**
@@ -41,7 +43,7 @@ fun LoadingViewPreview() {
 @Preview
 @Composable
 fun LoadingViewPreviewDark() {
-    NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(Config(colorTheme = NiceComponentsDarkColors)) {
         Surface {
             LoadingView()
         }

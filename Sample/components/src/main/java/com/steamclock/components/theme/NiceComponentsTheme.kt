@@ -1,6 +1,5 @@
 package com.steamclock.components.theme
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Typography
@@ -19,8 +18,7 @@ internal val LocalConfig = staticCompositionLocalOf {
 
 @Composable
 fun NiceComponentsTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    config: Config = Config(isDarkTheme = darkTheme),
+    config: Config = Config(),
     content: @Composable () -> Unit
 ) {
     CompositionLocalProvider(LocalConfig provides config) {

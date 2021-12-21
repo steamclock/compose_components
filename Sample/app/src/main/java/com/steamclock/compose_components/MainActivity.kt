@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -18,6 +19,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.steamclock.components.theme.Config
+import com.steamclock.components.theme.NiceComponentsDarkColors
+import com.steamclock.components.theme.NiceComponentsLightColors
 import com.steamclock.components.theme.NiceComponentsTheme
 import com.steamclock.compose_components.views.AllComponents
 import com.steamclock.compose_components.views.Home
@@ -33,7 +37,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 private fun Content() {
-    NiceComponentsTheme {
+    val config = Config(colorTheme = if (isSystemInDarkTheme()) NiceComponentsDarkColors else NiceComponentsLightColors)
+    NiceComponentsTheme(config) {
         val navController = rememberNavController()
         Scaffold(topBar = {
             val navBackStackEntry by navController.currentBackStackEntryAsState()

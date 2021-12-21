@@ -42,12 +42,7 @@ val NiceComponentsDarkColors = darkColors(
 
 @Immutable
 data class Config(
-    val isDarkTheme: Boolean = false,
-    val lightColorTheme: Colors = NiceComponentsLightColors,
-    val darkColorTheme: Colors = NiceComponentsDarkColors,
-
-    val colorTheme: Colors = if (isDarkTheme) darkColorTheme else lightColorTheme,
-
+    val colorTheme: Colors = NiceComponentsLightColors,
     val typeTheme: TypeTheme = TypeTheme(),
 
     // Button Styles

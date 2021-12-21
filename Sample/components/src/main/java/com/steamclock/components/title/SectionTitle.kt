@@ -5,9 +5,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.steamclock.components.theme.CurrentConfig
-import com.steamclock.components.theme.NiceComponentsTheme
-import com.steamclock.components.theme.TypeStyle
+import com.steamclock.components.theme.*
 
 /**
  * Sample
@@ -42,7 +40,7 @@ fun SectionTitlePreview() {
 @Preview
 @Composable
 fun SectionTitlePreviewDark() {
-    NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(Config(colorTheme = NiceComponentsDarkColors)) {
         Surface {
             ScreenTitle("Section Title")
         }

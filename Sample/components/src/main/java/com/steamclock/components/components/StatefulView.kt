@@ -5,6 +5,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.steamclock.components.helper.ContentLoadState
+import com.steamclock.components.theme.Config
+import com.steamclock.components.theme.NiceComponentsDarkColors
 import com.steamclock.components.theme.NiceComponentsTheme
 
 /**
@@ -104,7 +106,7 @@ fun StatefulViewPreviewLoading() {
 @Preview
 @Composable
 fun StatefulViewPreviewErrorDark() {
-    NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(Config(colorTheme = NiceComponentsDarkColors)) {
         Surface {
             StatefulView(
                 state = ContentLoadState.Error(Exception("Failed to load")),
@@ -117,7 +119,7 @@ fun StatefulViewPreviewErrorDark() {
 @Preview
 @Composable
 fun StatefulViewPreviewHasDataDark() {
-    NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(Config(colorTheme = NiceComponentsDarkColors)) {
         Surface {
             StatefulView(
                 state = ContentLoadState.HasData,
@@ -131,7 +133,7 @@ fun StatefulViewPreviewHasDataDark() {
 @Preview
 @Composable
 fun StatefulViewPreviewNoDataDark() {
-    NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(Config(colorTheme = NiceComponentsDarkColors)) {
         Surface {
             StatefulView(
                 state = ContentLoadState.NoData,
@@ -145,7 +147,7 @@ fun StatefulViewPreviewNoDataDark() {
 @Preview
 @Composable
 fun StatefulViewPreviewLoadingDark() {
-    NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(Config(colorTheme = NiceComponentsDarkColors)) {
         Surface {
             StatefulView(
                 state = ContentLoadState.Loading,

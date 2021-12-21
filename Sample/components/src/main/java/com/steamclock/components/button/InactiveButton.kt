@@ -6,9 +6,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.steamclock.components.theme.ButtonStyle
-import com.steamclock.components.theme.NiceComponentsTheme
-import com.steamclock.components.theme.CurrentConfig
+import com.steamclock.components.theme.*
 
 /**
  * Sample
@@ -41,7 +39,7 @@ fun InactiveButton(
 @Preview
 @Composable
 fun InactiveButtonPreview() {
-    NiceComponentsTheme(false) {
+    NiceComponentsTheme {
         Surface {
             InactiveButton(text = "Preview") {
 
@@ -53,7 +51,7 @@ fun InactiveButtonPreview() {
 @Preview
 @Composable
 fun InactiveButtonPreviewDark() {
-    NiceComponentsTheme(darkTheme = true) {
+    NiceComponentsTheme(Config(colorTheme = NiceComponentsDarkColors)) {
         Surface {
             InactiveButton(text = "Preview") {
 
