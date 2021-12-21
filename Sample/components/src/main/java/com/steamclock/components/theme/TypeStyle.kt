@@ -16,15 +16,4 @@ data class TypeStyle(val color: Color, val theme: TypeTheme.TextStyle, val lineL
             fontWeight = theme.fontWeight
         )
     }
-
-    companion object {
-        @Composable
-        fun build(
-            color: Color = CurrentConfig.colorTheme.onSurface,
-            theme: TypeTheme.TextStyle,
-            lineLimit: Int? = null
-        ): TypeStyle {
-            return TypeStyle(color = color, theme = theme, lineLimit = lineLimit)
-        }
-    }
 }
