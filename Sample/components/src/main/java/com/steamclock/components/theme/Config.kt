@@ -102,4 +102,9 @@ data class Config(
         color = colorTheme.onSurface,
         theme = typeTheme.headline2
     ),
-)
+) {
+    companion object {
+        val default: Config
+            get() = Config()
+    }
+}
