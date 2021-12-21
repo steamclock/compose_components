@@ -39,13 +39,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent { 
-            val newConfig = Config.default.copy(
+            val config = Config.default.copy(
                 primaryButtonStyle = Config.default.primaryButtonStyle.copy(
                     surfaceColor = Color.Red,
                     onSurfaceColor = Color.Black
                 )
             )
-            NiceComponentsTheme(newConfig) {
+            NiceComponentsTheme(config) {
                 // your content here
             }
         }
