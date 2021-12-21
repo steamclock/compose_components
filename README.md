@@ -4,7 +4,7 @@ A simple library with some nice looking Jetpack Compose UI components to get you
 
 Help jump start your prototypes with some sensible default components, then come back later and customize the look and feel of your app all in one place.
 
-![](1.png)
+![](1.png | 100px)
 ![](2.png)
 ![](3.png)
 ![](4.png)
