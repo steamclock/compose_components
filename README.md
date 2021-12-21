@@ -74,6 +74,10 @@ fun CustomPrimaryButton(text: String, onClick: () -> Unit) {
 }
 ```
 
+#### Material Components Interop
+
+`NiceComponentsTheme` is built on top of `MaterialTheme`, so all colours and typography should be applied to other Jetpack Compose Material Components within it. You can also access the current loaded configuration using the `CurrentConfig` object, which is provided to all children of a `NiceComponentsTheme` via composition local. 
+
 #### Customizing a Single Instance of a Component
 
 ```kotlin
