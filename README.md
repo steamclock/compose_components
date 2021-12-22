@@ -182,7 +182,7 @@ dependencies {
     implementation "com.github.steamclock:compose_components:<VERSION>"
 }
 ```
-Most recent version can be found [here](https://github.com/steamclock/compose-components/releases)
+Most recent version can be found [here](https://github.com/steamclock/compose_components/releases)
 
 3. Sync your project gradle files
 
