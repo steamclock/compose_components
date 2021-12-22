@@ -165,6 +165,7 @@ Just like how you can set a `colorTheme`, you can also set a `typeTheme` that de
 
 
 ### Installation
+[![](https://jitpack.io/v/steamclock/compose_components.svg)](https://jitpack.io/#steamclock/compose_components)
 
 1. Add this in your **root** build.gradle at the end of repositories:
 ``` 
