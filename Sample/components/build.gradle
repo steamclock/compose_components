@@ -67,17 +67,8 @@ afterEvaluate {
                 from components.release
 
                 // You can then customize attributes of the publication as shown below.
-                groupId = 'com.steamclock.NiceComponents'
-                artifactId = 'NiceComponents'
-                version = '1.0'
-            }
-            // Creates a Maven publication called “debug”.
-            debug(MavenPublication) {
-                // Applies the component for the debug build variant.
-                from components.debug
-
-                groupId = 'com.steamclock.NiceComponents'
-                artifactId = 'NiceComponents-debug'
+                groupId = 'com.steamclock.nicecomponents'
+                artifactId = 'release'
                 version = '1.0'
             }
         }
