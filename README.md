@@ -171,7 +171,7 @@ Just like how you can set a `colorTheme`, you can also set a `typeTheme` that de
 ```gradle
 allprojects {
     repositories {
-        ...
+        // other repositories
         maven { url 'https://jitpack.io' }
     }
 }
