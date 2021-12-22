@@ -166,4 +166,24 @@ Just like how you can set a `colorTheme`, you can also set a `typeTheme` that de
 
 ### Installation
 
-Coming soon....
+1. Add this in your **root** build.gradle at the end of repositories:
+``` 
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+``` 
+
+2. Add the dependency in your app module's build.gradle:
+```
+dependencies {
+    implementation "com.github.steamclock:compose_components:<VERSION>"
+}
+```
+Most recent version can be found [here](https://github.com/steamclock/compose-components/releases)
+
+3. Sync your project gradle files
+
+4. NiceComponents should now be available in the project.
