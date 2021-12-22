@@ -168,7 +168,7 @@ Just like how you can set a `colorTheme`, you can also set a `typeTheme` that de
 [![](https://jitpack.io/v/steamclock/compose_components.svg)](https://jitpack.io/#steamclock/compose_components)
 
 1. Add this in your **root** build.gradle at the end of repositories:
-``` 
+```gradle
 allprojects {
     repositories {
         ...
@@ -178,7 +178,7 @@ allprojects {
 ``` 
 
 2. Add the dependency in your app module's build.gradle:
-```
+```gradle
 dependencies {
     implementation "com.github.steamclock:compose_components:<VERSION>"
 }
